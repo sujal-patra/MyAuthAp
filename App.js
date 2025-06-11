@@ -27,7 +27,7 @@ const App = () => {
 
   const handleSignUp = () => {
     console.log('Signup credentials:', signUpCredentials);
-    Alert.alert(' Signup one');
+    Alert.alert(' Signup done');
   };
 
   return (
