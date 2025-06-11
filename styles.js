@@ -50,7 +50,7 @@ const loginScreenStyles = StyleSheet.create({
     height,
   },
   headerContainer: {
-    marginTop: SIZES.padding * 3, // moved logo slightly down
+    marginTop: SIZES.padding * 3, 
     alignItems: 'center',
     marginBottom: SIZES.padding,
   },
@@ -105,7 +105,7 @@ const loginScreenStyles = StyleSheet.create({
   },
   switchLink: {
     fontSize: SIZES.font,
-    color: COLORS.black, // ← signup button text color is now black
+    color: COLORS.black, 
     marginLeft: SIZES.base / 2,
   },
 });
