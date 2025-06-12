@@ -1,3 +1,5 @@
+// styles/loginScreenStyles.js
+
 import { StyleSheet, Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
@@ -50,7 +52,7 @@ const loginScreenStyles = StyleSheet.create({
     height,
   },
   headerContainer: {
-    marginTop: SIZES.padding * 3, 
+    marginTop: SIZES.padding * 3,
     alignItems: 'center',
     marginBottom: SIZES.padding,
   },
@@ -73,6 +75,12 @@ const loginScreenStyles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.gray,
     color: COLORS.black,
+  },
+  errorText: {
+    color: COLORS.error,
+    fontSize: SIZES.font - 1,
+    marginBottom: SIZES.base,
+    marginLeft: 2,
   },
   button: {
     height: SIZES.buttonHeight,
@@ -105,7 +113,7 @@ const loginScreenStyles = StyleSheet.create({
   },
   switchLink: {
     fontSize: SIZES.font,
-    color: COLORS.black, 
+    color: COLORS.black,
     marginLeft: SIZES.base / 2,
   },
 });
