@@ -6,6 +6,7 @@ things done here
 
 Login and Signup forms,
 Screen navigation using ternary operator,
+diffrent screens for login and signup
 Basic UI layout with Flexbox,
 Static login success/failure check,
 Consistent design and theme,
