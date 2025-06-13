@@ -1,4 +1,4 @@
-// styles/loginScreenStyles.js
+
 
 import { StyleSheet, Dimensions } from 'react-native';
 
@@ -6,7 +6,7 @@ const { width, height } = Dimensions.get('window');
 
 const COLORS = {
   primary: '#4CAF50',
-  secondary: '#2E7D32',
+  secondary: 'black',
   white: '#FFFFFF',
   black: '#000000',
   gray: '#BDBDBD',
@@ -57,9 +57,9 @@ const loginScreenStyles = StyleSheet.create({
     marginBottom: SIZES.padding,
   },
   logo: {
-    width: 100,
-    height: 100,
-    borderRadius: 20,
+    width: 150,
+    height: 150,
+    borderRadius: 100,
   },
   contentContainer: {
     flex: 1,
@@ -116,6 +116,16 @@ const loginScreenStyles = StyleSheet.create({
     color: COLORS.black,
     marginLeft: SIZES.base / 2,
   },
+  row: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  marginBottom: SIZES.base * 2,
+},
+linkText: {
+  fontSize: SIZES.font,
+  color: COLORS.secondary,
+},
+
 });
 
 export default loginScreenStyles;

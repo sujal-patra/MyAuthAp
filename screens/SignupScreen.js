@@ -1,45 +1,49 @@
+// screens/SignupScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableHighlight, Pressable, Image, Alert } from 'react-native';
-import loginScreenStyles from '../styles';
+import {
+  View, Text, TextInput, TouchableHighlight, Pressable, Image, Alert, StyleSheet,
+} from 'react-native';
+import loginScreenStyles from '../styles/loginScreenStyles';
 
-const SignupScreen = ({ switchToLogin }) => {
+const SignupScreen = ({ navigation }) => {
   const [signUpCredentials, setSignUpCredentials] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
+    firstName: '', lastName: '', email: '', password: '',
   });
 
   const handleSignUp = () => {
     console.log('Signup credentials:', signUpCredentials);
-    Alert.alert('Signup done');
+    Alert.alert('Signup successful!');
   };
 
   return (
-    <>
+    <View style={{ flex: 1 }}>
+      <Image
+        source={{ uri: 'https://static.vecteezy.com/system/resources/previews/035/353/889/non_2x/ai-generated-branch-with-green-leaves-in-sunlight-bokeh-effect-summer-background-ai-generated-photo.jpg' }}
+        style={styles.backgroundImage}
+        blurRadius={3}
+      />
       <View style={loginScreenStyles.headerContainer}>
         <Image
           source={{
             uri: 'https://i.pinimg.com/474x/1b/79/0b/1b790b24b15d40d69584543e600649d8.jpg',
           }}
           style={loginScreenStyles.logo}
-          resizeMode="cover"
         />
       </View>
 
       <View style={loginScreenStyles.contentContainer}>
         <TextInput
           placeholder="Enter your first name"
-          placeholderTextColor="#777"
           style={loginScreenStyles.input}
+          placeholderTextColor="#777"
           onChangeText={(text) =>
             setSignUpCredentials((prev) => ({ ...prev, firstName: text }))
           }
         />
         <TextInput
           placeholder="Enter your last name"
-          placeholderTextColor="#777"
           style={loginScreenStyles.input}
+          placeholderTextColor="#777"
           onChangeText={(text) =>
             setSignUpCredentials((prev) => ({ ...prev, lastName: text }))
           }
@@ -47,8 +51,8 @@ const SignupScreen = ({ switchToLogin }) => {
         <TextInput
           placeholder="Enter your email"
           keyboardType="email-address"
-          placeholderTextColor="#777"
           style={loginScreenStyles.input}
+          placeholderTextColor="#777"
           onChangeText={(text) =>
             setSignUpCredentials((prev) => ({ ...prev, email: text }))
           }
@@ -56,8 +60,8 @@ const SignupScreen = ({ switchToLogin }) => {
         <TextInput
           placeholder="Enter your password"
           secureTextEntry
-          placeholderTextColor="#777"
           style={loginScreenStyles.input}
+          placeholderTextColor="#777"
           onChangeText={(text) =>
             setSignUpCredentials((prev) => ({ ...prev, password: text }))
           }
@@ -73,13 +77,20 @@ const SignupScreen = ({ switchToLogin }) => {
 
         <View style={loginScreenStyles.switchContainer}>
           <Text style={loginScreenStyles.switchText}>Already have an account?</Text>
-          <Pressable onPress={switchToLogin}>
+          <Pressable onPress={() => navigation.navigate('Login')}>
             <Text style={loginScreenStyles.switchLink}> Login</Text>
           </Pressable>
         </View>
       </View>
-    </>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  backgroundImage: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: -1,
+  },
+});
 
 export default SignupScreen;

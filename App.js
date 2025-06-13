@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
-import { View, Image } from 'react-native';
+// App.js
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
-import loginScreenStyles from './styles';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const [activeScreen, setActiveScreen] = useState('login');
-
   return (
-    <View style={loginScreenStyles.root}>
-      <Image
-        source={{
-          uri: 'https://plus.unsplash.com/premium_photo-1669732922459-0d1946366259?fm=jpg&q=60&w=3000',
-        }}
-        style={loginScreenStyles.backgroundImage}
-        blurRadius={2}
-      />
-
-      {activeScreen === 'login' ? (
-        <LoginScreen switchToSignup={() => setActiveScreen('signup')} />
-      ) : (
-        <SignupScreen switchToLogin={() => setActiveScreen('login')} />
-      )}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
